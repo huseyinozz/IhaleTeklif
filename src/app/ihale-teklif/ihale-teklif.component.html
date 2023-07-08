@@ -1,0 +1,60 @@
+<div class="input-group mb-3 mt-3">
+    <label class="input-group-text">Ürün Adı</label>
+    <input #urunad class="form-control" >
+</div>
+<div class="input-group mb-3">
+    <label class="input-group-text" for="inputGroupSelect01">Ürün Fiyatı</label>
+    <input #fiyat class="form-control">
+</div>
+<div class="input-group mb-3">
+    <label class="input-group-text" for="inputGroupSelect01">Ürün Kdv Oranı</label>
+    <input #kdv class="form-control">
+</div>
+<div class="input-group mb-3">
+    <label class="input-group-text" for="inputGroupSelect01">Ürün Adedi</label>
+    <input #adet class="form-control">
+</div>
+<div class="input-group mb-4">
+
+    <button class="btn btn-outline-primary mt-2 mb-2 my-2" (click)="addItem(urunad,fiyat,kdv,adet); urunad.value = '';fiyat.value = '';kdv.value = '';adet.value = ''">Yeni Kalem Ekle</button>
+</div>
+
+<table class="table table-bordered">
+    <thead class = "bg-dark text-white">
+        <tr>
+            <td>Ürün ID</td>
+            <td>Ürün Ad</td>
+            <td>Ürün Fiyat</td>
+            <td>Birim Kdv</td>
+            <td>Ürün Adet</td>
+            <td>Kdv Tutarı</td>
+            <td>Ürün Tutar</td>
+            <td class="bg-white"></td>
+        </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let item of getItems(); let i = index">
+                <td>{{i+1}}</td>
+                <td>{{item.urunAd}}</td>
+                <td>{{item.urunFiyat}}</td>
+                <td>{{ item.birimKdv}}</td>
+                <td>{{item.urunAdet}}</td>
+                <td>{{ item.urunKdv}}</td>
+                <td>{{item.urunTutar}}</td>
+                <td>
+                    <button type="button" class="btn btn-danger" (click)="deleteItem(item)">Çıkar</button>
+                </td>
+            </tr>  
+    </tbody>
+    <thead class = "bg-dark text-white" >
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td colspan="2" class="text-center">Genel Toplam :  {{Topla()}}</td>
+                <td class="bg-white"></td>
+            </tr>         
+    </thead> 
+</table>

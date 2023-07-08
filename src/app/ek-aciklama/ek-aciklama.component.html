@@ -1,0 +1,19 @@
+
+<div class="card center text-center mt-3 mb-3" style="width: 35rem; margin:0 auto">
+    <div class="card-header bg-success text-white float-mid">
+      Ek Açıklamalar
+  </div>
+
+
+    <ul class="list-group list-group-flush" id="descriptionList">
+      <div class="input-group bm-3">
+        <label class="input-group-text">Ek Açıklama</label>
+        <input #ekaciklama class="form-control">
+        <button class="btn btn-outline-primary btn-sm float-end mt-2 mb-2 my-2 me-auto" (click)="addAciklama(ekaciklama)">
+          Ekle
+        </button>
+      </div>
+      <li class="list-group-item" *ngFor="let item of getAciklama(); let i = index">{{i+1}}-{{ item.ekaciklama }}</li>
+
+    </ul>
+  </div>

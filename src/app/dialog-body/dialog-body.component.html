@@ -1,0 +1,23 @@
+<button mat-icon-button style="float:right;" matDialogClose>
+    <mat-icon>cancel</mat-icon>
+</button>
+<mat-dialog-content>
+    <header><h1>Giriş Yapın</h1></header>
+    <p><mat-form-field>
+        <input #sirket matInput placeholder="Şirket Adınız..">
+        <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field></p>
+    <p><mat-form-field>
+        <input matInput placeholder="Mail Adresiniz..">
+        <mat-icon matSuffix>drafts</mat-icon>
+    </mat-form-field></p>
+    <p><mat-form-field>
+        <input matInput placeholder="Şifreniz..">
+        <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field></p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+    <button mat-raised-button color="primary" matDialogClose (click)="addItem(sirket)">Giriş Yap</button>
+    <button mat-raised-button color="warn" matDialogClose >İptal Et</button>
+</mat-dialog-actions>
